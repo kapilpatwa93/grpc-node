@@ -1,0 +1,23 @@
+{
+  "name": "hello-grpc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gen": "grpc_tools_node_protoc --proto_path=proto --js_out=import_style=commonjs,binary:src/pb  --grpc_out=grpc_js:./src/pb ./proto/*.proto && rm src/pb/*_message_grpc_pb.js",
+    "clean": "rm src/pb/*.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.2.12",
+    "@grpc/proto-loader": "^0.5.6",
+    "google-protobuf": "^3.16.0-rc.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "eslint": "^7.24.0"
+  }
+}
